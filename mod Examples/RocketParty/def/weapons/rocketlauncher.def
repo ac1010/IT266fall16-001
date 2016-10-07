@@ -4,7 +4,7 @@
 // Copyright 2002-2004 Raven Software
 //----------------------------------------------------------------
 
-export rocketlauncher
+export rocketlauncher 
 {
 	options -prefix SRL_ -scale .4 -keep muzzle_flash l_vent r_vent -sourcedir work/models/weapons/strogg_rocket_launcher/animations -destdir models/weapons/rocketlauncher
 
@@ -99,7 +99,7 @@ entityDef weapon_rocketlauncher
 	"recoilAngles"				"-.20 0 0"
 	
 	"mtr_flashShader"			"lights/muzzleflash"
-	"flashColor"				"0.99 0.84 .31"
+	"flashColor"				"100 .34 .31"
 	"flashRadius"				"200"
 	"flashPointLight"			"1"
 	"flashTime"					".1"
@@ -324,9 +324,14 @@ entityDef projectile_rocket
 	"model"						"models/weapons/rocketlauncher/rocket.lwo"
 	"def_damage"				"damage_rocketDirect"
 	"def_splash_damage"			"damage_rocketSplash"
-																											
-	"speed"						"900"
-	"fuse"						"6"
+	
+	/*
+		ac448
+		decreased speed and fuse
+	*/
+																										
+	"speed"						"9"
+	"fuse"						".01"
 	"push"						"48000"
 	
 							
@@ -418,8 +423,13 @@ entityDef damage_rocketSplash
 
 entityDef damage_rocketSplash_mp
 {
+	/*
+		ac448
+		increased radius and and knockback
+	*/
+
 	"inherit"					"damage_rocketSplash"
-	"knockback"					"100"
-	"damage"					"100"
-	"radius"					"120"
+	"knockback"					"1000"
+	"damage"					"0"
+	"radius"					"1000"
 }
